@@ -67,14 +67,19 @@ type SSHCredentials struct {
 
 //DockerServerCredentials store credentials for docker keys.
 type DockerServerCredentials struct {
-	XMLName             xml.Name `xml:"org.jenkinsci.plugins.docker.commons.credentials.DockerServerCredentials"`
-	ID                  string   `xml:"id"`
-	Scope               string   `xml:"scope"`
-	Username            string   `xml:"username"`
-	Description         string   `xml:"description,omitempty"`
-	ClientKey           string   `xml:"clientKey"`
-	ClientCertificate   string   `xml:"clientCertificate"`
-	ServerCaCertificate string   `xml:"serverCaCertificate"`
+	XMLName            xml.Name `xml:"com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl"`
+	ID                 string   `xml:"id"`
+	Scope              string   `xml:"scope"`
+	AccessKey          string   `xml:"accessKey"`
+	Description        string   `xml:"description,omitempty"`
+	SecretKey          string   `xml:"secretKey"`
+	IamRoleArn         string   `xml:"iamRoleArn"`
+	IamMfaSerialNumber string   `xml:"iamMfaSerialNumber"`
+}
+
+//AWSCredentials store credetnaisl for AWS.
+type AWSCredentials struct {
+	XMLName xml.Name ``
 }
 
 //KeySourceDirectEntryType is used when secret in provided directly as private key value
